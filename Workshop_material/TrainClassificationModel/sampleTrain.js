@@ -5,21 +5,21 @@ const PredictionApiClient = require("@azure/cognitiveservices-customvision-predi
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
-const trainingKey = "958ac5ed98f5499cb0331d66c5bfef8e";
-const predictionKey = "cfc4cf193dd149cd8956ac7703398481";
-const predictionResourceId = "/subscriptions/7abdf153-171a-4ac7-96bf-9cf91243932d/resourceGroups/16th-Shirley-CV/providers/Microsoft.CognitiveServices/accounts/sampleclassificati-Prediction";
-const sampleDataRoot = "/Users/yuhsuan/YuHsuan/Microsoft/customvision/CVCworkshop_1115/images";
+const trainingKey = "<>";
+const predictionKey = "<>";
+const predictionResourceId = "<>";
+const sampleDataRoot = "/images";
 
-const trainEndPoint = "https://sampleclassificati-prediction.cognitiveservices.azure.com/"
-const predictEndPoint = "https://sampleclassificati-prediction.cognitiveservices.azure.com/"
+const trainEndPoint = "<>"
+const predictEndPoint = "<>"
 
-const publishIterationName = "classifyModel";
+const publishIterationName = "<>";
 
 const trainer = new TrainingAPIClient.TrainingAPIClient(trainingKey, trainEndPoint);
 
 (async () => {
     console.log("Creating project...");
-    const sampleProject = await trainer.createProject("Dooooooog&Caaaaaaat")
+    const sampleProject = await trainer.createProject("<>")
     const dogTag = await trainer.createTag(sampleProject.id, "Dog");
     const catTag = await trainer.createTag(sampleProject.id, "Cat");
     console.log("Adding images...");
