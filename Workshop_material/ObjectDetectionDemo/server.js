@@ -16,7 +16,7 @@ app.get('/index.htm', function (req, res) {
 })
  
 app.post('/file_upload', function (req, res) {
-  console.log(req.files[0]);  // 上传的文件信息
+  console.log(req.files[0]);
   var des_file = __dirname + "/" + req.files[0].originalname;
   fs.readFile( req.files[0].path, function (err, data) {
     fs.writeFile(des_file, data, function (err) {
@@ -40,8 +40,8 @@ app.post('/file_upload', function (req, res) {
         };
 
         (async () => {
-          const predictor = new PredictionApi.PredictionAPIClient('cfc4cf193dd149cd8956ac7703398481', 'https://sample-classification.cognitiveservices.azure.com/customvision/v3.0/Prediction/b8ce75d2-925e-4e20-be8d-3f60454dd7bb/detect/iterations/Iteration1/image');
-          const results = await predictor.detectImage('b8ce75d2-925e-4e20-be8d-3f60454dd7bb', 'Iteration1',data)
+          const predictor = new PredictionApi.PredictionAPIClient('<predictionKey>', '<endpoint>');
+          const results = await predictor.detectImage('<projectID>', '<IterationName>',data)
         // Show results
 
           res.write('<header>'+'<h1>Object Detection Result</h1>')
